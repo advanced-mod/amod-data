@@ -1,0 +1,51 @@
+# This is an implementation of the GDPR.txt specification: https://gdpr-txt.org/
+purpose: Help developers diagnose and fix crashes, improve overall game stability.
+lawfulness: consent
+# While we believe this might fall under "legitimate interest", we explicitly ask
+# for consent to ensure transparency and respect for user privacy.
+
+data: backtrace
+required: no
+visibility: developers
+description:
+    A trace of function calls leading up to the crash, extracted from the crash
+    dump. Used to identify where and why the crash occurred.
+mitigation:
+    Usernames and personal paths are automatically scrubbed before processing
+    to avoid collecting personally identifiable information.
+
+data: user
+required: no
+visibility: developers
+description:
+    A unique identifier (e.g., Steam ID or internal GUID) helps verify crash
+    reports are legitimate, avoid spam, and determine how many unique users are
+    affected by the same issue.
+
+data: os
+required: no
+visibility: developers
+description:
+    The operating system version (Windows/Linux/macOS) helps determine if a
+    crash is OS-specific and whether it's related to particular releases.
+
+data: server-ip
+required: no
+visibility: developers
+description:
+    The IP of the server you were connected to when the crash occurred. Used to
+    diagnose issues tied to specific servers or server configurations.
+
+data: current-map
+required: no
+visibility: developers
+description:
+    The current map at the time of the crash. Used to identify if crashes are
+    related to specific map scripts, layouts, or triggers.
+
+data: release
+required: no
+visibility: developers
+description:
+    The version of AMod that crashed. Used to track bugs across different
+    builds and help ensure fixes are effective in future releases.
